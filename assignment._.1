@@ -1,0 +1,1133 @@
+//#include "studio.h"
+
+int calculator();
+
+int addFun(int first, int second);
+
+int subtractFun(int first, int second);
+
+int multiplyFun (int first, int second);
+
+int divideFun(int first, int second);
+
+int main () {
+
+    int usage=3;
+
+    int age=0;
+
+    int ask=1;
+
+    int level=0;
+
+    int primarysumone=0;
+
+    int primarysumtwo=0;
+
+    int primarysumthree=0;
+
+    int primarysumfour=0;
+
+    int primarysumfive=0;
+
+    int primarysumsix=0;
+
+    int primarysumseven=0;
+
+    int primarysumeight=0;
+
+    int primarysumnine=0;
+
+    int primarysumten=0;
+
+    int secondarysumone=0;
+
+    int secondarysumtwo=0;
+
+    int secondarysumthree=0;
+
+    int secondarysumfour=0;
+
+    int secondarysumfive=0;
+
+    int secondarysumsix=0;
+
+    int secondarysumseven=0;
+
+    int secondarysumeight=0;
+
+    int secondarysumnine=0;
+
+    int secondarysumten=0;
+
+    int highschoolsumone=0;
+
+    int highschoolsumtwo=0;
+
+    int highschoolsumthree=0;
+
+    int highschoolsumfour=0;
+
+    int highschoolsumfive=0;
+
+    int highschoolsumsix=0;
+
+    int highschoolsumseven=0;
+
+    int highschoolsumeight=0;
+
+    int highschoolsumnine=0;
+
+    int highschoolsumten=0;
+
+    printf("\n");
+
+    printf("Hello! Welcome from our quiz program! \n\n");
+
+    printf("DISCLAIMER : This quiz is only for schoolers !  0<age<19 ! \n\n");
+
+    printf(" About our game : There will be three levels \n\n");
+
+    printf("                  - primary ( between 6 year old to 10 years old\n ");
+
+    printf("                  - secondary ( between 11 years old to 16 years old\n ");
+
+    printf("                  - highschool ( between 17 years old to 18 years old\n\n ");
+
+    printf(" YOU HAVE TO ANSWER TILL YOU GET THE RIGHT ANSWER || THERE IS NO MARKING SYSTEM!\n\n");
+
+    printf("How old are you?\n\n");
+
+    printf("I am ");
+
+    scanf("%d", &age);
+
+    printf("\n");
+
+    while (age != 0) {
+
+        if (age <= 5) {
+
+            printf ("How can you even type in even though you are under 5 years old wOw ? \n\n");
+
+            level = 0;
+
+            break;
+        }
+
+        if (age<=10)//primary level//
+
+        {   printf ("Hey challenger, you will be given 10 easy quizzes to solve!\n\n");
+
+            level = 1;
+
+        }
+
+        else if (age<=16)//secondary level
+        {
+            printf ("Hey challenger, you will be given 10 normal quizzes to solve!\n\n");
+
+            level = 2;
+        }
+        else if (age<=18)//highschool level
+        {
+            printf("Hey challenger, you will be given 10 hard quizzes to solve!\n\n ");
+
+            level = 3;
+
+        }
+
+        else if (age>18) //adult
+        {
+            printf("You better go finish your job instead of playing quizzes :D !!! \n\n");
+
+
+            level = 0;
+
+            break;
+
+            }
+
+    age=0;
+
+
+
+
+    switch(level){
+
+
+
+    case 1:
+
+        usage=3;
+
+        printf("Note : The question will REPEAT UNTIL YOU CHOOSE THE RIGHT ANSWER!\n\n  ");
+
+        do{ // primary question 1
+
+                printf("What's the answer of 3 + 9?\n\n");
+
+                printf(" 1. 15 \n");
+                printf(" 2. 13 \n");
+                printf(" 3. 17 \n");
+                printf(" 4. 12 \n\n");
+
+                printf(" Press '0' to get help from calculator! You have %d chances to use calculator \n\n", usage );
+
+                printf("The answer is : ");
+
+                scanf("%d", &primarysumone);
+
+                printf("\n\n");
+
+                while (usage != 0)
+
+                    {if (primarysumone ==0){
+
+                    usage=usage-1;
+
+                    calculator(); }
+
+                    break;
+
+                    }
+
+
+         }while(primarysumone != 4);
+
+        printf("Fantastic! \n\n");
+
+        printf("Next Question!\n\n");
+
+        do{ // primary question 2
+
+                printf("Who killed Bogyoke Aung San? \n\n");
+
+                printf(" 1. Min Aung Hlaing  \n");
+                printf(" 2. Galone U Saw \n");
+                printf(" 3. A Naw Ya Htae \n");
+                printf(" 4. You \n\n");
+
+                printf("The answer is : ");
+
+                scanf("%d", &primarysumtwo);
+
+                printf("\n\n");
+
+         }while(primarysumtwo != 2);
+
+        printf("Cool! \n\n");
+
+        printf("Next Question!\n\n");
+
+
+        do{ // primary question 3
+
+                printf("What's the answer of 8/2 ?\n\n");
+
+                printf(" 1.  4 \n");
+                printf(" 2.  6 \n");
+                printf(" 3. 64 \n");
+                printf(" 4. 10 \n\n");
+
+                printf(" Press '0' to get help from calculator! You have %d chances to use calculator \n\n", usage );
+
+                printf("The answer is : ");
+
+                scanf("%d", &primarysumthree);
+
+                printf("\n\n");
+
+                while (usage != 0)
+
+                    {if (primarysumthree ==0){
+
+                    usage=usage-1;
+
+                    calculator(); }
+
+                    break;
+
+                    }
+
+         }while(primarysumthree != 1);
+
+        printf("Great! \n\n");
+
+        printf("Next Question!\n\n");
+
+        do{ // primary question 4
+
+                printf("At what temperature does water freeze?\n\n");
+
+                printf(" 1.   0'C \n");
+                printf(" 2. 100'C \n");
+                printf(" 3.  10'C \n");
+                printf(" 4.   1'C \n\n");
+
+                printf("The answer is : ");
+
+                scanf("%d", &primarysumfour);
+
+                printf("\n\n");
+
+         }while(primarysumfour != 1);
+
+        printf("Superb!\n\n");
+
+        printf("Next Question!\n\n");
+
+        do{ // primary question 5
+
+                printf("What's the answer of 7 - 4?\n\n");
+
+                printf(" 1. 11 \n");
+                printf(" 2.  3 \n");
+                printf(" 3.  2 \n");
+                printf(" 4. 28 \n\n");
+
+                printf(" Press '0' to get help from calculator! You have %d chances to use calculator \n\n", usage );
+
+                printf("The answer is : ");
+
+                scanf("%d", &primarysumfive);
+
+                printf("\n\n");
+
+                while (usage != 0)
+
+                    {if (primarysumfive ==0){
+
+                    usage=usage-1;
+
+                    calculator(); }
+
+                    break;
+
+                    }
+
+         }while(primarysumfive != 2);
+
+        printf("Brilliant! \n\n");
+
+        printf("Next Question!\n\n");
+
+        do{ // primary question 6
+
+                printf(" _____ is an example of mammel. \n\n");
+
+                printf(" 1. Human\n");
+                printf(" 2. EarthWorm\n");
+                printf(" 3. Sun Flower\n");
+                printf(" 4. Table \n\n");
+
+                printf("The answer is : ");
+
+                scanf("%d", &primarysumsix);
+
+                printf("\n\n");
+
+         }while(primarysumsix != 1);
+
+        printf("Perfect!\n\n");
+
+        printf("Next Question!\n\n");
+
+        do{ //primary question 7
+
+                printf("Where is the Eiffel tower?  \n\n");
+
+                printf(" 1. In Newyork\n");
+                printf(" 2. In Spain \n");
+                printf(" 3. In Germany\n");
+                printf(" 4. In France \n\n");
+
+                printf("The answer is : ");
+
+                scanf("%d", &primarysumseven);
+
+                printf("\n\n");
+
+         }while(primarysumseven != 4);
+
+        printf("Excellent! \n\n");
+
+        printf("Next Question!\n\n");
+
+        do{ //primary question 8
+
+                printf("What's the answer of 77 + 33 ?\n\n");
+
+                printf(" 1. 110 \n");
+                printf(" 2. 100 \n");
+                printf(" 3. 111 \n");
+                printf(" 4. 101 \n\n");
+
+                printf(" Press '0' to get help from calculator! You have %d chances to use calculator \n\n", usage );
+
+                printf("The answer is : ");
+
+                scanf("%d", &primarysumeight);
+
+                printf("\n\n");
+
+                while (usage != 0)
+
+                    {if (primarysumeight ==0){
+
+                    usage=usage-1;
+
+                    calculator(); }
+
+                    break;
+
+                    }
+
+         }while(primarysumeight != 1);
+
+        printf("Marvellous!\n\n");
+
+        printf("Next Question!\n\n");
+
+        do{ //primary question 9
+
+                printf("The three primary colors are blue , yellow and _____. \n\n");
+
+                printf(" 1. black\n");
+                printf(" 2. white \n");
+                printf(" 3. green\n");
+                printf(" 4. red \n\n");
+
+                printf("The answer is : ");
+
+                scanf("%d", &primarysumnine);
+
+                printf("\n\n");
+
+         }while(primarysumnine != 4);
+
+        printf("Outstanding! \n\n");
+
+        printf("Next Question!\n\n");
+
+                do{ //primary question 10
+
+                printf(" Where do we get milk? \n\n");
+
+                printf(" 1. From Humans\n");
+                printf(" 2. From Dogs \n");
+                printf(" 3. From Cows\n");
+                printf(" 4. From Pigs \n\n");
+
+                printf("The answer is : ");
+
+                scanf("%d", &primarysumten);
+
+                printf("\n\n");
+
+         }while(primarysumten != 3);
+
+        printf("Ace! \n\n");
+
+        printf("Thank you so much for playing our quizzes!\n\n");
+
+        break;
+
+
+    case 2:
+
+        usage=3; //secondary question one
+
+        do{
+
+                printf("What's the answer of 81 /3 ?\n\n");
+
+                printf(" 1. 27 \n");
+                printf(" 2.  4 \n");
+                printf(" 3.  9 \n");
+                printf(" 4. 84 \n\n");
+
+                printf(" Press '0' to get help from calculator! You have %d chances to use calculator \n\n", usage );
+
+                printf("The answer is : ");
+
+                scanf("%d", &secondarysumone);
+
+                printf("\n\n");
+
+                while (usage != 0)
+
+                    {if (secondarysumone ==0){
+
+                    usage=usage-1;
+
+                    calculator(); }
+
+                    break;
+
+                    }
+
+
+         }while(secondarysumone != 1);
+
+        printf("Correct!\n\n");
+
+        printf("Next Question!\n\n");
+
+
+        do{
+
+                printf("How may continents are there on the Earth ?\n\n");
+
+                printf(" 1.  9 \n");
+                printf(" 2.  4 \n");
+                printf(" 3.  7 \n");
+                printf(" 4.  6 \n\n");
+
+                printf("The answer is : ");
+
+                scanf("%d", &secondarysumtwo);
+
+                printf("\n\n");
+
+
+         }while(secondarysumtwo != 3);
+
+        printf("Excellent!\n\n");
+
+        printf("Next Question!\n\n");
+
+        do{
+
+                printf("What's the answer of 5001 / 3?\n\n");
+
+                printf(" 1. 1666 \n");
+                printf(" 2. 1557 \n");
+                printf(" 3. 1668 \n");
+                printf(" 4. 1667 \n\n");
+
+                printf(" Press '0' to get help from calculator! You have %d chances to use calculator \n\n", usage );
+
+                printf("The answer is : ");
+
+                scanf("%d", &secondarysumthree);
+
+                printf("\n\n");
+
+                while (usage != 0)
+
+                    {if (secondarysumthree ==0){
+
+                    usage=usage-1;
+
+                    calculator(); }
+
+                    break;
+
+                    }
+
+         }while(secondarysumthree != 4);
+
+        printf("Perfect!\n\n");
+
+        printf("Next Question!\n\n");
+
+        do{
+
+                printf("In which direction does the sun rise?\n\n");
+
+                printf(" 1.  South \n");
+                printf(" 2.  North \n");
+                printf(" 3.  East \n");
+                printf(" 4.  West \n\n");
+
+                printf("The answer is : ");
+
+                scanf("%d", &secondarysumfour);
+
+                printf("\n\n");
+
+
+         }while(secondarysumfour != 3);
+
+        printf("Marvellous!\n\n");
+
+        printf("Next Question!\n\n");
+
+        do{
+
+                printf("Which of these metals is magnetic?\n\n");
+
+                printf(" 1.  Iron \n");
+                printf(" 2.  Silver \n");
+                printf(" 3.  Copper \n");
+                printf(" 4.  Gold \n\n");
+
+                printf("The answer is : ");
+
+                scanf("%d", &secondarysumfive);
+
+                printf("\n\n");
+
+
+         }while(secondarysumfive != 1);
+
+        printf("Superb!\n\n");
+
+        printf("Next Question!\n\n");
+
+
+        do{
+
+                printf("What's the answer of 888 + 222?\n\n");
+
+                printf(" 1. 1110 \n");
+                printf(" 2. 1100 \n");
+                printf(" 3. 1010 \n");
+                printf(" 4. 1001 \n\n");
+
+                printf(" Press '0' to get help from calculator! You have %d chances to use calculator \n\n", usage );
+
+                printf("The answer is : ");
+
+                scanf("%d", &secondarysumsix);
+
+                printf("\n\n");
+
+                while (usage != 0)
+
+                    {if (secondarysumsix ==0){
+
+                    usage=usage-1;
+
+                    calculator(); }
+
+                    break;
+
+                    }
+
+         }while(secondarysumsix != 1);
+
+        printf("Brillient!\n\n");
+
+        printf("Next Question!\n\n");
+
+        do{
+
+                printf("What's the answer of 1248 / 8?\n\n");
+
+                printf(" 1. 165 \n");
+                printf(" 2. 156 \n");
+                printf(" 3. 155 \n");
+                printf(" 4. 146 \n\n");
+
+                printf(" Press '0' to get help from calculator! You have %d chances to use calculator \n\n", usage );
+
+                printf("The answer is : ");
+
+                scanf("%d", &secondarysumseven);
+
+                printf("\n\n");
+
+                while (usage != 0)
+
+                    {if (secondarysumseven ==0){
+
+                    usage=usage-1;
+
+                    calculator(); }
+
+                    break;
+
+                    }
+
+         }while(secondarysumseven != 2);
+
+        printf("Cool!\n\n");
+
+        printf("Next Question!\n\n");
+
+        do{
+
+                printf("Who became known as the lady with the lamp?\n\n");
+
+                printf(" 1.  Queen Victoria \n");
+                printf(" 2.  Florence Nightingale \n");
+                printf(" 3.  Queen Elizabeth \n");
+                printf(" 4.  Taylor Swift \n\n");
+
+                printf("The answer is : ");
+
+                scanf("%d", &secondarysumeight);
+
+                printf("\n\n");
+
+
+         }while(secondarysumeight != 2);
+
+        printf("Impossible!\n\n");
+
+        printf("Next Question!\n\n");
+
+        do{
+
+                printf("Which movie is the snowman 'Olaf' from?\n\n");
+
+                printf(" 1.  Mulan \n");
+                printf(" 2.  Cinderella  \n");
+                printf(" 3.  Tarzan \n");
+                printf(" 4.  Frozen \n\n");
+
+                printf("The answer is : ");
+
+                scanf("%d", &secondarysumnine);
+
+                printf("\n\n");
+
+
+         }while(secondarysumnine != 4);
+
+        printf("What a Disney Fan!\n\n");
+
+        printf("Next Question!\n\n");
+
+        do{
+
+                printf("What's the answer of 85* 7 ?\n\n");
+
+                printf(" 1. 575 \n");
+                printf(" 2.  92 \n");
+                printf(" 3. 585 \n");
+                printf(" 4. 595 \n\n");
+
+                printf(" Press '0' to get help from calculator! You have %d chances to use calculator \n\n", usage );
+
+                printf("The answer is : ");
+
+                scanf("%d", &secondarysumten);
+
+                printf("\n\n");
+
+                while (usage != 0)
+
+                    {if (secondarysumten ==0){
+
+                    usage=usage-1;
+
+                    calculator(); }
+
+                    break;
+
+                    }
+
+         }while(secondarysumten != 4);
+
+        printf("Ace!\n\n");
+
+        printf("Thanks for playing our quizzes!\n\n");
+
+        break;
+
+    case 3:
+
+        usage=3;
+
+        do{
+
+                printf("Find the area of the rectangle with 15 meter width and 19 meter height. \n\n");
+
+                printf(" 1. 285 meter2 \n");
+                printf(" 2.  34 meter2 \n");
+                printf(" 3. 275 meter2 \n");
+                printf(" 4. 290 meter2 \n\n");
+
+                printf(" Press '0' to get help from calculator! You have %d chances to use calculator \n\n", usage );
+
+                printf("The answer is : ");
+
+                scanf("%d", &highschoolsumone);
+
+                printf("\n\n");
+
+                while (usage != 0)
+
+                    {if (highschoolsumone ==0){
+
+                    usage=usage-1;
+
+                    calculator(); }
+
+                    break;
+
+                    }
+         }while(highschoolsumone != 1);
+
+        printf("WOW!\n\n");
+
+        printf("Next Question!\n\n");
+
+        do{
+
+                printf("Who invented the telephone? \n\n");
+
+                printf(" 1.  Thomas Edison \n");
+                printf(" 2.  Albert Einstein  \n");
+                printf(" 3.  Justin Bieber \n");
+                printf(" 4.  Alexander Graham Bell \n\n");
+
+                printf("The answer is : ");
+
+                scanf("%d", &highschoolsumtwo);
+
+                printf("\n\n");
+
+
+         }while(highschoolsumtwo != 4);
+
+        printf("Impressive!\n\n");
+
+        printf("Next Question!\n\n");
+
+        do{
+
+                printf(" 300 people came to the park but half of them went outside and half of the left went to the show. How many people left in the park? \n\n");
+
+                printf(" 1. 150  \n");
+                printf(" 2.  75  \n");
+                printf(" 3. 125  \n");
+                printf(" 4. 250  \n\n");
+
+                printf(" Press '0' to get help from calculator! You have %d chances to use calculator \n\n", usage );
+
+                printf("The answer is : ");
+
+                scanf("%d", &highschoolsumthree);
+
+                printf("\n\n");
+
+                while (usage != 0)
+
+                    {if (highschoolsumthree ==0){
+
+                    usage=usage-1;
+
+                    calculator(); }
+
+                    break;
+
+                    }
+         }while(highschoolsumthree != 2);
+
+        printf("Math Genius!\n\n");
+
+        printf("Next Question!\n\n");
+
+        do{
+
+                printf("Which is the longest river? \n\n");
+
+                printf(" 1.  Ganga \n");
+                printf(" 2.  Ayarwaddy  \n");
+                printf(" 3.  Amazon \n");
+                printf(" 4.  Nile \n\n");
+
+                printf("The answer is : ");
+
+                scanf("%d", &highschoolsumfour);
+
+                printf("\n\n");
+
+
+         }while(highschoolsumfour != 3);
+
+        printf("Great!\n\n");
+
+        printf("Next Question!\n\n");
+
+        do{
+
+                printf("A computer reads and stores data in the form of _____.\n\n");
+
+                printf(" 1.  Numbers \n");
+                printf(" 2.  Images  \n");
+                printf(" 3.  Words \n");
+                printf(" 4.  Sounds \n\n");
+
+                printf("The answer is : ");
+
+                scanf("%d", &highschoolsumfive);
+
+                printf("\n\n");
+
+
+         }while(highschoolsumfive != 1);
+
+        printf("What a Computer Geek!\n\n");
+
+        printf("Next Question!\n\n");
+
+        do{
+
+                printf("What is the correct synonym for 'Old' ? \n\n");
+
+                printf(" 1.  young \n");
+                printf(" 2.  modern  \n");
+                printf(" 3.  ancient \n");
+                printf(" 4.  grandmother \n\n");
+
+                printf("The answer is : ");
+
+                scanf("%d", &highschoolsumsix);
+
+                printf("\n\n");
+
+
+         }while(highschoolsumsix != 3);
+
+        printf("Brilliant!\n\n");
+
+        printf("Next Question!\n\n");
+
+        do{
+
+                printf(" What's the answer for 39+ x = 99 \n\n");
+
+                printf(" 1. 70  \n");
+                printf(" 2. 80  \n");
+                printf(" 3. 60  \n");
+                printf(" 4. 50  \n\n");
+
+                printf(" Press '0' to get help from calculator! You have %d chances to use calculator \n\n", usage );
+
+                printf("The answer is : ");
+
+                scanf("%d", &highschoolsumseven);
+
+                printf("\n\n");
+
+                while (usage != 0)
+
+                    {if (highschoolsumseven ==0){
+
+                    usage=usage-1;
+
+                    calculator(); }
+
+                    break;
+
+                    }
+         }while(highschoolsumseven != 3);
+
+        printf("Keep Going! \n\n");
+
+        printf("Next Question!\n\n");
+
+        do{
+
+                printf("What is the correct antonym for 'Ugly' ? \n\n");
+
+                printf(" 1.  disgusting \n");
+                printf(" 2.  dirty  \n");
+                printf(" 3.  magnificent \n");
+                printf(" 4.  grossing \n\n");
+
+                printf("The answer is : ");
+
+                scanf("%d", &highschoolsumeight);
+
+                printf("\n\n");
+
+
+         }while(highschoolsumeight != 3);
+
+        printf("Superb!\n\n");
+
+        printf("Next Question!\n\n");
+
+        do{
+
+                printf("When is the Burmese Independence Day ? \n\n");
+
+                printf(" 1.  February 4th \n");
+                printf(" 2.  January 4th  \n");
+                printf(" 3.  February 12th \n");
+                printf(" 4.  March 1st \n\n");
+
+                printf("The answer is : ");
+
+                scanf("%d", &highschoolsumnine);
+
+                printf("\n\n");
+
+
+         }while(highschoolsumnine != 2);
+
+        printf("How intelligent!\n\n");
+
+        printf("Next Question!\n\n");
+
+        do{
+
+                printf("How is your feeling for this game ? \n\n");
+
+                printf(" 1.  I'm so in love with this game! \n");
+                printf(" 2.  I appreciate the hard work!  \n");
+                printf(" 3.  Good! \n");
+                printf(" 4.  Badd! \n\n");
+
+                printf("The answer is : ");
+
+                scanf("%d", &highschoolsumten);
+
+                printf("\n\n");
+
+
+         }while(highschoolsumten != 1);
+
+        printf("Ace!\n\n");
+
+        printf("Thanks for solving our quizzes!\n\n");
+
+        break;
+    }
+
+    return 0;
+}
+}
+
+
+int calculator() {
+
+        printf(" Glad to see you are using our calculator program <3 !\n\n ");
+
+        //int numbers=0;
+
+        //printf("Notes: IT CAN ONLY MAINTAIN 4 NUMBERS ! \n\n");
+
+        //numbers asking and operation taking
+
+        int firstNumber;
+
+        int secondNumber;
+
+        //int thirdNumber;
+
+        //int fourthNumber;
+
+        //char betweenThirdAndFourth;
+
+        //char betweenSecondAndThird;
+
+        char betweenFirstAndSecond;
+
+        int answerFirstAndSecond;
+
+        //int answerSecondAndThird;
+
+        //int answerThirdAndFourth;
+
+        //printf("How many number do you have to calculate : ");
+
+        //scanf("%d", &numbers);
+
+        // printf("\n\n");
+
+        // two numbers calculation
+
+
+
+        printf("Enter the first number : ");
+
+        scanf("%d", &firstNumber);
+
+        printf("\n\n");
+
+        printf ("Enter the second number : ");
+
+        scanf("%d", &secondNumber);
+
+        printf("\n\n");
+
+        printf("Enter the operation +, - , * , / : ");
+
+        scanf(" %c",&betweenFirstAndSecond);
+
+        printf("\n\n");
+
+
+    switch(betweenFirstAndSecond){
+
+        case '+':
+
+            answerFirstAndSecond= addFun(firstNumber, secondNumber);
+
+            printf(" Result= %d\n\n", answerFirstAndSecond);
+
+            break;
+
+        case '-':
+
+            answerFirstAndSecond= subtractFun(firstNumber, secondNumber);
+
+            printf(" Result= %d\n\n", answerFirstAndSecond);
+
+            break;
+
+        case '*':
+
+            answerFirstAndSecond= multiplyFun(firstNumber,secondNumber);
+
+            printf(" Result= %d\n\n", answerFirstAndSecond);
+
+
+            break;
+
+        case '/':
+
+            answerFirstAndSecond= divideFun(firstNumber,secondNumber);
+
+            printf(" Result= %d\n\n", answerFirstAndSecond);
+
+            break;
+
+        default :
+
+            printf("Syntax Error!");
+
+            printf("\n\n");
+
+            return answerFirstAndSecond;
+
+        }
+
+        }
+
+int addFun (int first, int second){
+
+    int answerFirstAndSecond = first + second;
+
+    return answerFirstAndSecond;
+}
+
+int subtractFun(int first, int second){
+
+    int answerFirstAndSecond = first - second;
+
+    return answerFirstAndSecond;
+
+}
+
+int multiplyFun (int first, int second){
+
+    int answerFirstAndSecond = first * second;
+
+    return answerFirstAndSecond;
+}
+
+int divideFun(int first, int second){
+
+    int answerFirstAndSecond = first / second;
+
+    return answerFirstAndSecond;
+
+}
