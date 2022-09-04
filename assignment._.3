@@ -1,0 +1,299 @@
+
+//Phyu Phyu Aye Cham
+
+// bianca39.conceptx@gmail.com
+
+//Unlimited Age Scholarship Class
+
+#include <stdio.h>
+
+void passFunDescending (int *a , int * b);
+
+void passFunAscending (int *a , int * b);
+
+int main (){
+
+    int highestData = 0, basicData = 0, highestScore = 0;
+
+    int sizeOfData= 1000;
+
+    int userWnaAdd = 0;
+
+    int fakeUser = 0;
+
+    int data[sizeOfData];
+
+    int redo = 1;
+
+    int operation =0;
+
+    /*printf("Hello! Welcome from our array program! \n\n");
+
+    printf("You can do some math and statistic functions here! \n\n");
+
+    printf("This program provides : \n\n");
+
+    printf(" Ascending and Descending order of the array ;\n ");
+
+    printf(" Finding Mean , Median , Mode of the array ; \n ");
+
+    printf(" Subtracting and Adding the values in array !\n\n ");*/
+
+    printf("Firstly, enter amount of the data you desire to put in : ");
+
+    scanf ("%d", &userWnaAdd);
+
+    int ascendDataForMedian[userWnaAdd];
+
+    printf("\n");
+
+    for ( int i = 0; i < userWnaAdd ; i++ ) {
+
+
+        printf("Enter the value for data '%d' : ", i);
+
+        scanf("%d", &data[i]);
+
+        ascendDataForMedian[i] = data[i];
+    }
+
+    printf("\n");
+
+    for ( int b = 0 ; b < userWnaAdd ; b++ ) {
+
+        printf(" %d ,", data[b]);
+
+    }
+    printf("\n");
+
+    do {
+
+        printf(" (0) for Ascending ;\n");
+
+        printf(" (1) for Descending ;\n");
+
+        printf(" (2) for Mean ;\n");
+
+        printf(" (3) for Median ;\n");
+
+        printf(" (4) for Mode ;\n");
+
+        printf(" (5) for Memory Address ;\n\n");
+
+        printf("Enter the function you want to run :" );
+
+        scanf(" %d", &operation);
+
+        //Ascending
+
+        /*
+        }*/
+
+        int sum = 0;
+
+        for (int p = 0; p < sizeOfData; p++) {
+
+            for (int j = 0; j <= userWnaAdd - 2; j++) {
+
+                passFunAscending(&data[j], &data[j + 1]);
+
+                passFunAscending(&ascendDataForMedian[j], &ascendDataForMedian[j + 1]);
+
+            }
+
+        }
+
+        printf("\n\n");
+
+
+
+        switch(operation){
+
+            case 0:
+
+                printf("Your data in ascending order are ");
+
+                for (int print = 0; print < userWnaAdd; print++) {
+
+                    printf("( %d ) ", data[print]);
+
+                }
+                printf("\n\n");
+
+                break;
+
+            case 1:
+
+                // Dscending
+
+                for (int p = 0; p < sizeOfData; p++) {
+
+                    for (int j = 0; j <= userWnaAdd - 2; j++) {
+
+                        passFunDescending(&data[j], &data[j + 1]);
+                    }
+                }
+
+                printf("Your data in descending order are");
+
+                for (int print = 0; print < userWnaAdd; print++) {
+
+                    printf("( %d ) ", data[print]);
+
+                }
+
+                printf("\n\n");
+
+                break;
+
+            case 2:
+
+                //Mean
+
+                for (int k = 0; k < userWnaAdd; k++) {
+
+                    sum = sum + data[k];
+                }
+
+                int mean = sum / userWnaAdd;
+
+                printf(" This is mean of this array = %d \n", mean);
+
+                break;
+
+            case 3:
+
+                //Median
+
+                for (int print = 0; print < userWnaAdd; print++) {
+
+                    printf("( %d ) ", ascendDataForMedian[print]);
+
+                }
+
+                int mod = userWnaAdd % 2;
+
+                int conditionDecisionForMedian = userWnaAdd / 2;
+
+                int median = 0;
+
+                int value = userWnaAdd / 2;
+
+                conditionDecisionForMedian--;
+
+                printf("%d \n", mod);
+
+                if (mod != 0) {
+
+                    median = ascendDataForMedian[value];
+
+                    printf(" 1This is the median of this odd number array = %d ", median);
+
+                    printf("\n\n");
+
+                } else if (mod == 0) {
+
+                    median = (ascendDataForMedian[conditionDecisionForMedian] +
+                              ascendDataForMedian[conditionDecisionForMedian + 1]) / 2;
+
+                    printf(" This is the median of this even number array = %d ", median);
+
+                    printf("\n\n");
+                }
+
+                break;
+
+            case 4:
+
+                //Mode
+
+
+                for (int p = 0; p < sizeOfData; p++) {
+
+                    basicData = 0;
+
+                    for (int j = 0; j < userWnaAdd; j++) {
+
+                        if (ascendDataForMedian[p] == ascendDataForMedian[j]) {
+
+                            basicData++;
+                        }
+                    }
+                    if (basicData > highestScore) {
+
+                        highestScore = basicData;
+
+                        highestData = ascendDataForMedian[p];
+                    }
+                }
+
+                printf("This is the mode value for this array = %d and this is times it occurs = %d", highestData,
+                       highestScore);
+
+                printf("\n\n");
+
+                break;
+
+            case 5:
+
+                for (int a= 0; a < userWnaAdd; a++){
+
+                    printf(" This is the memory address of your data %d = %x \n\n", a , &data[a]);
+                }
+
+                break;
+
+            default:
+
+                printf("You typed wrong function!!");
+
+                printf("\n\n");
+
+        }
+
+        printf("Enter '0' to quit and '1' to restart : ");
+
+        scanf("%d", &redo);
+
+        printf("\n\n");
+
+    } while (redo != 0);
+
+    printf("Thanks for using our program!");
+
+    return 0;
+}
+
+//Bubble Sort Ascending
+
+void passFunAscending (int * a ,int * b) {
+
+    int temp;
+
+    if (*a > *b){
+
+        temp = *a;
+
+        *a= *b;
+
+        *b= temp;
+    }
+
+}
+
+// Bubble sort Descending
+
+void passFunDescending (int * a ,int * b) {
+
+    int temp;
+
+    if (*a < *b){
+
+        temp = *b;
+
+        *b= *a;
+
+        *a= temp;
+    }
+
+}
