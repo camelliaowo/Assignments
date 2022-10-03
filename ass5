@@ -1,0 +1,628 @@
+
+
+// Phyu Phyu Aye Cham
+
+// bianca39.conceptx@gmail.com
+
+// server point of view
+
+// SimCard system
+
+#include <iostream>
+
+using namespace std;
+
+class SimCard{
+
+public:
+
+    int currentID = 0;
+
+    bool packageBuy = false;
+
+    int place[100];
+
+    int locationOfData = 0;
+
+    string passwordstore[100];
+
+    string phoneNum [100];
+
+    int amount [100];
+
+    string username [100];
+
+    bool loan = false;
+
+    int package[100];
+
+    SimCard(){
+
+        cout<<endl;
+
+        cout<<"Welcome to our SimCard"<<endl;
+
+    }
+
+    int registration();
+
+    int login();
+
+    int MainMenu();
+
+    int PhoneNumNamount();
+
+    int Data();
+
+    int Loan();
+
+    int Gb();
+
+    int Exchange();
+
+    int Add();
+
+    int loanTaken = 0;
+
+};
+
+int SimCard::MainMenu() {
+
+    int loop = 1;
+
+    int option;
+
+    while (loop == 1){
+
+        cout<<"Press 0 to Register"<<endl;
+
+        cout<<"Press 1 to Login"<<endl;
+
+        cin>>option;
+
+        if(option == 0) {
+
+            // register
+
+            registration();
+
+            loop = 0;
+
+        }
+        else if (option == 1){
+
+            // login
+
+            login();
+
+            loop = 0;
+
+        }
+
+        else {
+
+            cout<<"Invalid data"<<endl;
+
+            loop = 1;
+
+        }
+
+    }
+
+
+
+}
+
+
+int SimCard::registration() {
+
+    cout<<""<<endl;
+
+    string name;
+
+    string phoneNumUser;
+
+    string password;
+
+    string confirmPassword;
+
+    int userAmount;
+
+    cout<<"Enter your name : ";
+
+    cin>>name;
+
+    cout<<"Enter your phone number : +959 ";
+
+    cin>>phoneNumUser;
+
+    cout<<"Enter your password (at least 8 digits to 16 digits ) :";
+
+    cin>>password;
+
+    cout<<"Confirm password to register:";
+
+    cin>>confirmPassword;
+
+    cout<<"Enter Phone Bill Amount :";
+
+    cin>>userAmount;
+
+    if( password == confirmPassword && password.length() >= 8 && password.length() <= 16  ){
+
+        username [locationOfData] = name ;
+
+        passwordstore [locationOfData] = password;
+
+        phoneNum[locationOfData] = phoneNumUser;
+
+        amount[locationOfData]= userAmount;
+
+        cout<<"Registration Success!"<<endl;
+
+        locationOfData++;
+
+        MainMenu();
+
+    }
+
+    else{
+
+        cout<<"Invalid data"<<endl;
+
+        registration();
+    }
+
+}
+
+int SimCard::login() {
+
+    cout<<""<<endl;
+
+    string loginPhoneNumber;
+
+    string loginPassword;
+
+    cout << "Enter phone number to login : +959 ";
+
+    cin >> loginPhoneNumber;
+
+    cout << "Enter password to login for +959 " << loginPhoneNumber;
+
+    cout << " : ";
+
+    cin >> loginPassword;
+
+    int tempOutput = 0;
+
+
+    for (int i = 0; i <= locationOfData; i++) {
+
+        if (loginPhoneNumber == phoneNum[i] && loginPassword == passwordstore[i]) {
+
+            cout << "Login Success" << endl;
+
+            cout << "" <<endl;
+
+            Data();
+
+            PhoneNumNamount();
+
+            tempOutput = 1;
+
+            currentID = i;
+        }
+    }
+
+    if (tempOutput == 0) {
+
+        cout<<"Invalid Data";
+
+        login();
+    }
+
+}
+
+
+
+int SimCard::PhoneNumNamount() {
+
+    int amountFunctions = 0;
+
+    cout<<"Press 0 to Loan"<<endl;
+
+    cout<<"Press 1 to Add Bill"<<endl;
+
+    cout<<"Press 2 to Gb buying"<<endl;
+
+    cout<<"Press 3 to Exchange"<<endl;
+
+    cin>>amountFunctions;
+
+    if(amountFunctions == 0) {
+
+        // Loan
+
+        Loan();
+
+    }
+    else if (amountFunctions == 1){
+
+        // Add
+
+        Add();
+
+    }
+    else if (amountFunctions == 2){
+
+        // Add
+
+        Gb();
+
+    }
+    else if (amountFunctions == 3){
+
+        // Exchange
+
+        Exchange();
+
+    }
+
+    else {
+
+        cout<<"Invalid data"<<endl;
+
+        PhoneNumNamount();
+
+    }
+
+}
+
+int SimCard::Loan() {
+
+    if( amount[currentID] <= 200) {
+
+        int Loan2400 = 2400;
+
+        int Loan800 = 800;
+
+        int optionForLoan;
+
+        cout<<"Press 0 to get 2400 bills loan with 100 ks tax "<<endl;
+
+        cout<<"Press 1 to get 800 bills  loan with 57 ks tax "<<endl;
+
+        cin>>optionForLoan;
+
+        if(optionForLoan == 0) {
+
+            // 2400
+
+            amount[currentID] = amount[currentID] + Loan2400 ;
+
+            cout<<""<<endl;
+
+            loan = true;
+
+            loanTaken = 2500 ;
+
+            Data();
+
+            PhoneNumNamount();
+        }
+        else if (optionForLoan == 1){
+
+            // 800
+
+            amount[currentID] = amount[currentID] + Loan800 ;
+
+            cout<<""<<endl;
+
+            loan = true;
+
+            loanTaken = 857;
+
+            Data();
+
+            PhoneNumNamount();
+
+        }
+
+        else {
+
+            cout<<"Invalid data"<<endl;
+
+            Loan();
+
+        }
+    }
+    else {
+
+        cout<<"Your bill isn't low enough ( x < 200 ) to get a bill loan !"<<endl;
+
+        PhoneNumNamount();
+
+    }
+}
+
+int SimCard::Add() {
+
+    int billAmount;
+
+
+
+    cout<<"How much bill do you want to add ? "<<endl;
+
+    cout<<"0 for 1000"<<endl;
+
+    cout<<"1 for 3000"<<endl;
+
+    cout<<"2 for 5000"<<endl;
+
+    cout<<"3 for 10000"<<endl;
+
+    cin>>billAmount;
+
+    switch(billAmount){
+
+        case 0:
+
+            if (loan){
+
+                amount[currentID] += 1000;
+
+                if(amount[currentID] >= loanTaken ){
+
+                    amount[currentID] -= loanTaken;
+                }
+            }
+            else{
+
+                amount[currentID] += 1000;
+
+            }
+
+            Data();
+
+            PhoneNumNamount();
+
+        case 1:
+
+            if (loan){
+
+                amount[currentID] += 3000;
+
+                if(amount[currentID] >= loanTaken ){
+
+                    amount[currentID] -= loanTaken;
+                }
+            }
+            else{
+
+                amount[currentID] += 3000;
+
+            }
+
+            Data();
+
+            PhoneNumNamount();
+
+        case 2:
+
+            if (loan){
+
+                amount[currentID] += 5000;
+
+                if(amount[currentID] >= loanTaken ){
+
+                    amount[currentID] -= loanTaken;
+                }
+            }
+            else{
+
+                amount[currentID] += 5000;
+
+            }
+
+            Data();
+
+            PhoneNumNamount();
+
+        case 3:
+
+            if (loan){
+
+                amount[currentID] += 10000;
+
+                if(amount[currentID] >= loanTaken ){
+
+                    amount[currentID] -= loanTaken;
+                }
+            }
+            else{
+
+                amount[currentID] += 10000;
+
+            }
+
+            Data();
+
+            PhoneNumNamount();
+
+        default:
+
+            cout<<"Invalid Data"<<endl;
+
+            Add();
+
+    }
+
+
+}
+
+/*int SimCard::Gb() {
+
+    if (amount[currentID] >= 1000) {
+
+        int dataPackage = 0;
+
+        cout << "Press 0 to buy 1 GB = 999 ks " << endl;
+
+        cout << "Press 1 to buy 2 GB = 1999 ks" << endl;
+
+        cout << "Press 2 to buy 5 Gb = 4999 ks " << endl;
+
+        cin >> dataPackage;
+
+        switch (dataPackage) {
+
+            case 0:
+
+                amount[currentID] -= 999;
+
+                package[currentID] = 1;
+
+                packageBuy = true;
+
+                Data();
+
+            case 1:
+
+                amount[currentID] -= 1999;
+
+                package[currentID] = 2;
+
+                packageBuy = true;
+
+                Data();
+
+            case 2:
+
+                amount[currentID] -= 4999;
+
+                package[currentID] = 5;
+
+                packageBuy = true;
+
+                Data();
+
+            default:
+
+                cout << "Invalid Data" << endl;
+
+                Gb();
+
+        }
+
+    }
+
+}*/
+
+int SimCard::Data() {
+
+    cout<<"Phone Number - ";
+
+    for(int i=0; i<locationOfData ; i++){
+
+        cout<<" 09 "<<phoneNum[i]<<endl;
+
+    }
+    cout<<"Phone Bill - ";
+
+    for(int i=0; i<locationOfData ; i++){
+
+        cout<<"   "<<amount[i]<<endl;
+
+    }
+
+    cout<<"Phone Bill - ";
+
+    if( packageBuy ){
+
+        for(int i=0; i<locationOfData ; i++){
+
+            cout<<"   "<<package[i]<<endl;
+
+        }
+
+
+    }
+}
+
+int main() {
+
+    SimCard user;
+
+    user.MainMenu();
+
+
+}
+
+
+// test //
+
+/*int packageChoice;
+
+cout<<"Press 0 to buy message package"<< endl;
+
+cout<<"Press 1 to buy internet package"<< endl;
+
+cout<<"Press 2 to buy call package"<< endl;
+
+cin>>packageChoice;
+
+switch (packageChoice) {
+
+case 0:
+
+int messagePackage = 0;
+
+cout<<"Press 0 to buy 500 messages = 999 ks "<< endl;
+
+cout<<"Press 1 to buy 1000 messages = 1999 ks"<< endl;
+
+cout<<"Press 2 to buy 2500 messages = 4999 ks "<< endl;
+
+cin>>messagePackage;
+
+switch (messagePackage){
+
+case 0:
+
+amount[currentID] -= 999;
+
+package[currentID] = 1;
+
+Data();
+
+case 1:
+
+amount[currentID] -= 1999;
+
+package[currentID] = 2;
+
+Data();
+
+case 2:
+
+amount[currentID] -= 4999;
+
+package[currentID] = 5;
+
+Data();
+
+default:
+
+cout<<"Invalid Data"<<endl;
+
+Gb();
+
+}
+
+ int SimCard::Exchange() {
+
+
+
+}*/
+
+
